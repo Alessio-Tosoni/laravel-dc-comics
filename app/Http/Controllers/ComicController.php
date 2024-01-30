@@ -14,7 +14,7 @@ class ComicController extends Controller
     {
         $products = Comic::all();
 
-        return $products;
+        return view("comics.index", compact("products"));
     }
 
     /**
@@ -38,7 +38,9 @@ class ComicController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $dettaglio = Comic::find($id);
+
+       return view("comics.show", compact("dettaglio"));
     }
 
     /**
