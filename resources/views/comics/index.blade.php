@@ -14,7 +14,21 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $item->title }}</h5>
                         <p class="card-text">{{ $item->price }}</p>
-                        <a href="{{ route("comics.show", $item->id) }}" class="btn btn-primary">Mostra di più</a>
+                        <div class="d-flex justify-content-evenly">
+                            <div class=" mx-1">
+                                <a href="{{ route("comics.show", $item->id) }}" class="btn btn-primary   ">Dettaglio</a>
+                            </div>
+                            <div class=" mx-1">
+                                <a href="{{ route("comics.edit", $item->id) }}" class="btn btn-warning   ">Modifica</a>
+                            </div>
+                            <form action="{{ route('comics.destroy', $item->id) }}" method="POST" class="d-inline-block">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" value="Cancella" class="btn btn-danger">
+                            </form>
+                                
+                            
+                        </div>
                     </div>
                 </div>
             </div>
