@@ -35,6 +35,14 @@ class ComicController extends Controller
             "title"=> "required|min:5",
             "cover"=> "required",
             "price"=> "required|numeric|gte:0|lte:99.99",
+        ],[
+            'title.required' => 'il titolo non è stato compilato correttamente',
+            'title.min' => 'il titolo inserito non ha abbastanza caratteri',
+            'cover.required' => 'la copertina non è stata compilata correttamente',
+            'price.required' => 'il prezzo non è stato compilato correttamente',
+            'price.numeric' => 'il prezzo inserito non è un numero',
+            'price.lte' => 'il prezzo è al di sopra del prezzo massimo consentito',
+
         ]);
 
         $data =$request->all();

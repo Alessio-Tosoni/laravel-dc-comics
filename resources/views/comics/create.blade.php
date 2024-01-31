@@ -5,7 +5,7 @@
         <div class="row">
             <h2>inserisci nuovo fumetto</h2>
             @if ($errors->any())
-                <div class="alert alert-secondary" role="alert">
+                <div class="alert alert-danger" role="alert">
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
