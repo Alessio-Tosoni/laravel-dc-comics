@@ -4,6 +4,15 @@
     <div class="container">
         <div class="row">
             <h2>inserisci nuovo fumetto</h2>
+            @if ($errors->any())
+                <div class="alert alert-secondary" role="alert">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         </div>
         <div class="row">
             <form action="{{ route('comics.store') }}" method="POST">
